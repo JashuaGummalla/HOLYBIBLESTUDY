@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sacred Bible Study & Spiritual Growth Web Application — Complete 66 Books, Walk in the Spirit Topical Collections, Chronological Biblical Timeline, and Multi-color Study Journal.">
+  <title>Holy Scripture & Spiritual Growth — Bible Study Sanctuary</title>
+
+  <!-- Google Fonts: Cinzel (Sacred Serif), Lora (Scripture Body), Inter (UI Controls) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Google Translate Integration Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,pt,it,el,he,ar,hi,te,ta,kn,ml,zh-CN,ja,ko,tl,ru,uk',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+</head>
+<body class="font-size-md" data-theme="light">
+
+  <!-- Top Sacred Header Bar -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <!-- Brand & Title -->
+      <div class="brand" id="brand-home-btn" role="button" tabindex="0" aria-label="Go to Bible Sanctuary Home">
+        <div class="brand-icon-wrapper" aria-hidden="true">
+          <!-- Sacred Cross & Bible SVG -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+            <path d="M10 6v6"></path>
+            <path d="M7 9h6"></path>
+            <path d="M6 18h14"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">Holy Scripture</h1>
+          <div class="brand-subtitle">Spiritual Growth & Sanctuary</div>
+        </div>
+      </div>
+
+      <!-- Header Controls: Translation, Search, Font Size, Journal, Language, Theme -->
+      <div class="header-actions">
+        <!-- Translation Selector -->
+        <select id="translation-select" class="select-styled" aria-label="Select Bible Translation">
+          <option value="web" selected>WEB (World English)</option>
+          <option value="kjv">KJV (King James)</option>
+          <option value="asv">ASV (American Standard)</option>
+          <option value="bsb">BSB (Berean Standard)</option>
+        </select>
+
+        <!-- Font Size Switcher -->
+        <select id="font-size-select" class="select-styled" aria-label="Select Scripture Font Size">
+          <option value="font-size-sm">Font: A-</option>
+          <option value="font-size-md" selected>Font: A</option>
+          <option value="font-size-lg">Font: A+</option>
+          <option value="font-size-xl">Font: A++</option>
+        </select>
+
+        <!-- Global Search Button -->
+        <button id="search-modal-trigger" class="btn btn-secondary" aria-label="Open Scripture & Topic Search (Press /)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="btn-label-desktop">Search</span>
+        </button>
+
+        <!-- Google Translate Widget Wrapper -->
+        <div class="translate-widget-wrapper" title="Translate entire site into any language">
+          <div id="google_translate_element"></div>
+        </div>
+
+        <!-- My Spiritual Journal Drawer Button -->
+        <button id="journal-drawer-trigger" class="btn btn-primary" aria-label="Open My Spiritual Journal & Highlights">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span class="btn-label-desktop">Journal</span>
+          <span id="journal-badge-count" class="badge-count" style="display:none;">0</span>
+        </button>
+
+        <!-- Theme Toggle Button (Light/Dark) -->
+        <button id="theme-toggle-btn" class="btn-icon" aria-label="Toggle Light and Dark Sanctuary Theme" title="Toggle Sanctuary Theme">
+          <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="theme-icon-moon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sacred Main Navigation Tabs Bar -->
+  <nav class="nav-tabs-bar" aria-label="Main Application Views">
+    <div class="container">
+      <ul class="nav-tabs-list" role="tablist">
+        <li class="nav-tab-item" role="presentation">
+          <button class="nav-tab-btn active" id="tab-reader-btn" data-target="tab-reader" role="tab" aria-selected="true" aria-controls="tab-reader">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+            <span>Bible Reader & 66 Books</span>
+          </button>
+        </li>
+        <li class="nav-tab-item" role="presentation">
+          <button class="nav-tab-btn" id="tab-topical-btn" data-target="tab-topical" role="tab" aria-selected="false" aria-controls="tab-topical">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Walk in the Spirit (Topical)</span>
+          </button>
+        </li>
+        <li class="nav-tab-item" role="presentation">
+          <button class="nav-tab-btn" id="tab-timeline-btn" data-target="tab-timeline" role="tab" aria-selected="false" aria-controls="tab-timeline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Biblical Timeline (10 Eras)</span>
+          </button>
+        </li>
+        <li class="nav-tab-item" role="presentation">
+          <button class="nav-tab-btn" id="tab-journal-btn" data-target="tab-journal-inline" role="tab" aria-selected="false" aria-controls="tab-journal-inline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span>My Study Journal</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Application Body -->
+  <main class="main-view-container container" id="main-content">
+
+    <!-- Daily Bread Verse & Reflection Banner -->
+    <section class="daily-verse-banner" aria-label="Daily Scripture and Reflection">
+      <div class="daily-verse-content">
+        <div class="daily-badge">
+          <span>✦ Daily Bread & Spiritual Focus</span>
+        </div>
+        <blockquote class="daily-verse-text" id="daily-verse-text">
+          "The LORD is my shepherd: I shall not want. He makes me lie down in green pastures. He leads me beside still waters."
+        </blockquote>
+        <div class="daily-verse-ref" id="daily-verse-ref">Psalm 23:1-2 (WEB)</div>
+        <div class="daily-reflection-prompt" id="daily-reflection-prompt">
+          <strong>Daily Reflection:</strong> Where are you striving in your own energy today? Rest in the Shepherd's quiet guidance and allow Him to restore your weary soul.
+        </div>
+      </div>
+      <div class="daily-actions">
+        <button id="daily-jump-btn" class="btn btn-secondary" aria-label="Read full chapter of Daily Verse">
+          <span>Read Chapter</span>
+        </button>
+        <button id="daily-copy-btn" class="btn btn-secondary" aria-label="Copy Daily Verse to clipboard">
+          <span>Copy Verse</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 1: COMPLETE 66-BOOK BIBLE EXPLORER & DYNAMIC CHAPTER READER
+         ==================================================================== -->
+    <section id="tab-reader" class="tab-pane active" role="tabpanel" aria-labelledby="tab-reader-btn">
+      <div class="reader-layout">
+
+        <!-- Left Sidebar: 66 Books Catalog -->
+        <aside class="books-sidebar" aria-label="Bible Books Navigator">
+          <!-- Instant Search Filter -->
+          <div class="sidebar-search-box">
+            <span class="sidebar-search-icon" aria-hidden="true">🔍</span>
+            <input type="text" id="sidebar-book-search" class="sidebar-search-input" placeholder="Search 66 Books (e.g. John, Gen)..." aria-label="Filter Books of the Bible">
+          </div>
+
+          <!-- Testament Switcher (Old Testament 39 / New Testament 27) -->
+          <div class="testament-toggle-group" role="group" aria-label="Testament Selector">
+            <button id="testament-all-btn" class="testament-btn active" data-testament="ALL">All (66)</button>
+            <button id="testament-ot-btn" class="testament-btn" data-testament="OT">OT (39)</button>
+            <button id="testament-nt-btn" class="testament-btn" data-testament="NT">NT (27)</button>
+          </div>
+
+          <!-- Genre Filter Pills Carousel -->
+          <div class="genre-pills-list" role="group" aria-label="Filter by Genre">
+            <button class="genre-pill-btn active" data-genre="ALL">All Genres</button>
+            <button class="genre-pill-btn" data-genre="Law">Law</button>
+            <button class="genre-pill-btn" data-genre="History">History</button>
+            <button class="genre-pill-btn" data-genre="Poetry/Wisdom">Wisdom</button>
+            <button class="genre-pill-btn" data-genre="Major Prophets">Major Prophets</button>
+            <button class="genre-pill-btn" data-genre="Minor Prophets">Minor Prophets</button>
+            <button class="genre-pill-btn" data-genre="Gospels">Gospels</button>
+            <button class="genre-pill-btn" data-genre="Pauline Epistles">Epistles</button>
+            <button class="genre-pill-btn" data-genre="Prophecy">Prophecy</button>
+          </div>
+
+          <!-- Scrollable Book List (All 66 Books dynamically rendered) -->
+          <nav class="book-list-scroll" id="book-nav-list" aria-label="Books List">
+            <!-- Rendered by app.js -->
+          </nav>
+        </aside>
+
+        <!-- Right Column: Book Overview, Chapter Nav, Chapter Study Header, Scripture Reader -->
+        <div class="reader-content-col">
+
+          <!-- 1. Book Overview Card -->
+          <article class="book-overview-card" id="book-overview-card" aria-label="Book Information and Spiritual Theme">
+            <div class="book-header-row">
+              <div class="book-title-group">
+                <h2 class="book-main-title" id="book-view-name">Genesis</h2>
+                <span class="book-badge-genre" id="book-view-genre">The Law (Torah)</span>
+              </div>
+              <div class="book-meta-chips" id="book-view-chips">
+                <span class="meta-chip">✍️ <span id="book-view-author">Moses</span></span>
+                <span class="meta-chip">⏳ <span id="book-view-date">c. 1445–1405 BC</span></span>
+                <span class="meta-chip">🏛️ <span id="book-view-era">Creation & Patriarchs</span></span>
+              </div>
+            </div>
+
+            <div class="book-theme-box">
+              <span class="theme-label">Core Theological Theme</span>
+              <p class="theme-text" id="book-view-theme">
+                Beginnings: Creation, The Fall, God's Covenant Promise, and the Seed of Faith
+              </p>
+            </div>
+
+            <div class="book-highlights-accordion">
+              <div class="highlights-title">Key Spiritual Highlights</div>
+              <ul class="highlights-list" id="book-view-highlights">
+                <!-- Rendered by app.js -->
+              </ul>
+            </div>
+          </article>
+
+          <!-- 2. Chapter Selector Grid -->
+          <div class="chapter-nav-card" aria-label="Select Chapter to Read">
+            <div class="chapter-nav-header">
+              <h3 class="chapter-nav-title">Select Chapter</h3>
+              <span id="chapter-count-label" class="text-muted" style="font-size:0.82rem;">50 Chapters</span>
+            </div>
+            <div class="chapter-grid" id="chapter-grid-container">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <!-- 3. Chapter Study Header (Key Points & Timeline Context) -->
+          <section class="chapter-study-header" id="chapter-study-header" aria-label="Chapter Context and Key Insights">
+            <h3 class="study-header-title" id="study-chapter-heading">Genesis Chapter 1 Study Context</h3>
+            <p class="study-context-text" id="study-chapter-context">
+              Historical timeline and theological significance of this passage.
+            </p>
+            <ul class="study-keypoints-list" id="study-chapter-keypoints">
+              <!-- Key points rendered by app.js -->
+            </ul>
+          </section>
+
+          <!-- 4. Audio Read-Aloud Player Sticky Dock -->
+          <div class="audio-player-bar" aria-label="Audio Bible Reader">
+            <div class="audio-info">
+              <div class="audio-icon-pulse" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="audio-title" id="audio-current-label">Audio Bible Read-Aloud</div>
+                <div class="audio-status" id="audio-status-label">Ready to listen</div>
+              </div>
+            </div>
+            <div class="audio-controls">
+              <!-- Speed Selector -->
+              <select id="audio-speed-select" class="select-styled" aria-label="Select Audio Playback Speed">
+                <option value="0.85">Speed: 0.85x</option>
+                <option value="1.0" selected>Speed: 1.0x</option>
+                <option value="1.25">Speed: 1.25x</option>
+              </select>
+
+              <!-- Play/Pause Button -->
+              <button id="audio-play-btn" class="btn btn-primary" aria-label="Play chapter audio read-aloud">
+                <svg id="audio-play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span id="audio-play-text">Listen</span>
+              </button>
+
+              <!-- Stop Button -->
+              <button id="audio-stop-btn" class="btn btn-secondary" aria-label="Stop audio" style="display:none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="6" y="6" width="12" height="12"></rect>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- 5. Scripture Verses Reading Display Card -->
+          <article class="scripture-display-card" id="scripture-container" aria-label="Scripture Chapter Text">
+            <div class="scripture-card-header">
+              <h2 class="chapter-title-large" id="scripture-chapter-title">Genesis 1</h2>
+              <span class="translation-tag" id="scripture-translation-badge">WEB Translation</span>
+            </div>
+
+            <!-- Dynamic Verses Text Area -->
+            <div class="scripture-text-flow" id="verses-body-flow">
+              <!-- Loading spinner or verses rendered by app.js -->
+              <div class="golden-spinner" aria-label="Loading sacred scripture..."></div>
+            </div>
+
+            <!-- Chapter Bottom Pagination Nav (Previous Chapter / Next Chapter) -->
+            <div class="chapter-bottom-nav">
+              <button id="btn-prev-chapter" class="btn btn-secondary" aria-label="Navigate to Previous Chapter">
+                ← Previous Chapter
+              </button>
+              <button id="btn-next-chapter" class="btn btn-primary" aria-label="Navigate to Next Chapter">
+                Next Chapter →
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 2: "WALK IN THE SPIRIT" TOPICAL COLLECTIONS
+         ==================================================================== -->
+    <section id="tab-topical" class="tab-pane" role="tabpanel" aria-labelledby="tab-topical-btn">
+      <!-- Topical Hero Banner -->
+      <div class="topical-header-banner">
+        <div class="section-eyebrow">Spiritual Growth & Sanctuary</div>
+        <h2 class="section-heading-large">Walk in the Spirit</h2>
+        <p class="section-subtext">
+          Conquer sin, overcome temptation, put on the full armor of God, and cultivate unshakable faith through targeted scripture collections and practical spiritual victory guides.
+        </p>
+      </div>
+
+      <!-- 10 Topical Cards Overview Grid -->
+      <div class="topical-grid" id="topical-cards-grid">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Topical Deep-Dive Expanded View -->
+      <div class="topical-detail-view" id="topical-detail-view">
+        <button id="topical-back-btn" class="btn btn-secondary topic-back-btn">
+          ← Back to All 10 Spiritual Topics
+        </button>
+
+        <div class="topic-detail-hero" id="topic-detail-hero">
+          <!-- Rendered by app.js -->
+        </div>
+
+        <div class="topical-verses-list" id="topical-verses-container">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 3: CHRONOLOGICAL BIBLICAL TIMELINE (10 ERAS)
+         ==================================================================== -->
+    <section id="tab-timeline" class="tab-pane" role="tabpanel" aria-labelledby="tab-timeline-btn">
+      <div class="topical-header-banner">
+        <div class="section-eyebrow">Salvation History Through the Ages</div>
+        <h2 class="section-heading-large">Chronological Biblical Timeline</h2>
+        <p class="section-subtext">
+          Journey from the dawn of Creation to the eternal promise of the New Jerusalem through the 10 major epochs of God's redemptive plan. Click any book chip to open that book directly in the Bible Reader.
+        </p>
+      </div>
+
+      <div class="timeline-container" id="timeline-eras-container">
+        <!-- 10 Eras rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         TAB 4: MY SPIRITUAL JOURNAL & SAVED HIGHLIGHTS (Inline View)
+         ==================================================================== -->
+    <section id="tab-journal-inline" class="tab-pane" role="tabpanel" aria-labelledby="tab-journal-btn">
+      <div class="topical-header-banner">
+        <div class="section-eyebrow">Personal Sanctuary</div>
+        <h2 class="section-heading-large">My Spiritual Journal & Highlights</h2>
+        <p class="section-subtext">
+          Review your color-coded highlights, personal study reflections, prayers, and bookmarked scriptures. Export everything to a clean text document anytime.
+        </p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="drawer-filter-tabs" style="border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <button class="journal-filter-pill active" data-filter="ALL">All Items</button>
+          <button class="journal-filter-pill" data-filter="promises">Promises (Gold)</button>
+          <button class="journal-filter-pill" data-filter="growth">Growth (Emerald)</button>
+          <button class="journal-filter-pill" data-filter="wisdom">Wisdom (Sapphire)</button>
+          <button class="journal-filter-pill" data-filter="comfort">Comfort (Rose)</button>
+          <button class="journal-filter-pill" data-filter="bookmarks">Bookmarks ★</button>
+          <button class="journal-filter-pill" data-filter="notes">Notes 📝</button>
+        </div>
+
+        <div id="inline-journal-items-list" class="drawer-content-scroll" style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); min-height: 400px;">
+          <!-- Rendered by app.js -->
+        </div>
+
+        <div style="margin-top: 1.25rem; display: flex; justify-content: flex-end;">
+          <button id="inline-export-notes-btn" class="btn btn-primary">
+            <span>📥 Export My Study Notes (.txt)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       SLIDE-OVER DRAWER: "MY SPIRITUAL JOURNAL & HIGHLIGHTS"
+       ==================================================================== -->
+  <div class="drawer-backdrop" id="journal-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="slide-drawer" id="journal-slide-drawer" aria-label="My Spiritual Journal Drawer">
+    <div class="drawer-header">
+      <h2 class="drawer-title">Spiritual Journal & Highlights</h2>
+      <button id="journal-drawer-close" class="btn-icon" aria-label="Close Journal Drawer">✕</button>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="drawer-filter-tabs" role="group" aria-label="Filter Journal Entries">
+      <button class="journal-filter-pill active" data-filter="ALL">All</button>
+      <button class="journal-filter-pill" data-filter="promises">Promises</button>
+      <button class="journal-filter-pill" data-filter="growth">Growth</button>
+      <button class="journal-filter-pill" data-filter="wisdom">Wisdom</button>
+      <button class="journal-filter-pill" data-filter="comfort">Comfort</button>
+      <button class="journal-filter-pill" data-filter="bookmarks">★</button>
+      <button class="journal-filter-pill" data-filter="notes">📝</button>
+    </div>
+
+    <!-- Scrollable Journal Content List -->
+    <div class="drawer-content-scroll" id="drawer-journal-items">
+      <!-- Rendered by app.js -->
+    </div>
+
+    <!-- Drawer Footer Actions -->
+    <div class="drawer-footer">
+      <span id="drawer-total-count" style="font-size: 0.82rem; color: var(--text-muted);">0 Saved Items</span>
+      <button id="drawer-export-notes-btn" class="btn btn-primary" aria-label="Export all study notes to text file">
+        <span>📥 Export Notes (.txt)</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ====================================================================
+       FLOATING VERSE ACTION TOOLBAR (Pops up on verse click)
+       ==================================================================== -->
+  <div class="floating-verse-toolbar" id="floating-verse-toolbar" role="toolbar" aria-label="Verse Study Actions">
+    <div class="toolbar-group" aria-label="Highlight Colors">
+      <button class="color-dot-btn gold" data-color="promises" title="Highlight as God's Promises & Faithfulness" aria-label="Highlight Gold - Promises"></button>
+      <button class="color-dot-btn emerald" data-color="growth" title="Highlight as Spiritual Growth & Victory" aria-label="Highlight Emerald - Growth"></button>
+      <button class="color-dot-btn sapphire" data-color="wisdom" title="Highlight as Wisdom & Doctrine" aria-label="Highlight Sapphire - Wisdom"></button>
+      <button class="color-dot-btn rose" data-color="comfort" title="Highlight as Grace & Comfort" aria-label="Highlight Rose - Comfort"></button>
+      <button class="color-dot-btn clear" data-color="none" title="Remove Highlight" aria-label="Clear Highlight">✕</button>
+    </div>
+
+    <div class="toolbar-divider" aria-hidden="true"></div>
+
+    <div class="toolbar-group">
+      <button id="toolbar-btn-note" class="btn-icon" title="Add Study Note or Prayer" aria-label="Add Personal Note">
+        📝
+      </button>
+      <button id="toolbar-btn-bookmark" class="btn-icon" title="Toggle Bookmark" aria-label="Bookmark Verse">
+        ★
+      </button>
+      <button id="toolbar-btn-copy" class="btn-icon" title="Copy Verse with Reference" aria-label="Copy Verse">
+        📋
+      </button>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 1: PERSONAL STUDY NOTE / PRAYER EDITOR
+       ==================================================================== -->
+  <div class="modal-overlay" id="note-modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="note-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="note-modal-title">Add Personal Study Note</h3>
+        <button id="note-modal-close" class="btn-icon" aria-label="Close Note Editor">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="note-modal-ref-label" style="font-family: var(--font-serif-header); font-size: 1.05rem; color: var(--accent-gold); font-weight: 700;">
+          Genesis 1:1
+        </div>
+        <p id="note-modal-verse-quote" style="font-family: var(--font-serif-body); font-style: italic; font-size: 0.92rem; color: var(--text-secondary); max-height: 80px; overflow-y: auto;">
+          "In the beginning, God created the heavens and the earth."
+        </p>
+        <label for="note-textarea" style="font-size: 0.82rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">
+          Your Reflection or Prayer:
+        </label>
+        <textarea id="note-textarea" class="textarea-styled" placeholder="Write your spiritual takeaway, revelation, or personal prayer for this verse..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="note-modal-delete-btn" class="btn btn-secondary" style="display:none; color: #DC2626; margin-right: auto;">
+          Delete Note
+        </button>
+        <button id="note-modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+        <button id="note-modal-save-btn" class="btn btn-primary">Save Note</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 2: GLOBAL SCRIPTURE & TOPIC SEARCH ENGINE
+       ==================================================================== -->
+  <div class="modal-overlay" id="search-modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="search-modal-title">
+    <div class="modal-card search-modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="search-modal-title">Scripture & Topic Search</h3>
+        <button id="search-modal-close" class="btn-icon" aria-label="Close Search">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="position: relative;">
+          <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem;" aria-hidden="true">🔍</span>
+          <input type="text" id="global-search-input" class="search-input-large" placeholder="Jump to verse (e.g. John 3:16, Romans 8) or search topics..." autofocus>
+        </div>
+        <div id="search-quick-tags" style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="font-size: 0.78rem; color: var(--text-muted); align-self: center;">Quick Jumps:</span>
+          <button class="genre-pill-btn" data-search-jump="John 3">John 3</button>
+          <button class="genre-pill-btn" data-search-jump="Psalm 23">Psalm 23</button>
+          <button class="genre-pill-btn" data-search-jump="Romans 8">Romans 8</button>
+          <button class="genre-pill-btn" data-search-jump="Ephesians 6">Ephesians 6</button>
+          <button class="genre-pill-btn" data-search-jump="1 Corinthians 13">1 Cor 13</button>
+        </div>
+        <div class="search-results-list" id="search-results-container">
+          <div style="padding: 2rem 1rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            Type a book reference like <strong>"John 3:16"</strong>, a book name like <strong>"Proverbs"</strong>, or a spiritual topic like <strong>"Temptation"</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-cross">✝</div>
+      <p style="font-family: var(--font-serif-header); font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">
+        Holy Scripture & Spiritual Growth Sanctuary
+      </p>
+      <p style="font-size: 0.8rem;">
+        "Thy word is a lamp unto my feet, and a light unto my path." — Psalm 119:105
+      </p>
+    </div>
+  </footer>
+
+  <!-- Application Scripts (bible-data.js, timeline-data.js, topical-verses.js, app.js) -->
+  <script src="js/bible-data.js"></script>
+  <script src="js/timeline-data.js"></script>
+  <script src="js/topical-verses.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
